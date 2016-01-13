@@ -13,4 +13,35 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/modal
 //= require_tree .
+
+
+$(document).ready(function(){
+	$('#tutorialBtn').click(function(e){
+		//alert("open!!");
+		$('#pleaseWaitDialog2').modal('show');
+	});
+	$('#recentBtn').click(function(e){
+		 e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+	});
+
+	setInterval(ajaxCall, 5000); //300000 MS == 5 minutes
+
+	function ajaxCall() {
+    	$.get("/test/getList", function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+    });
+
+    	
+	}
+});
+
+jQuery(function($) {
+  $("#tool-form")
+    .bind("ajax:beforeSend", function(){$('#pleaseWaitDialog').modal('show');})
+    .bind("ajax:complete", function() {$('#pleaseWaitDialog').modal('hide');}
+    );
+});

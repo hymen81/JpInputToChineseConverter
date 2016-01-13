@@ -1,0 +1,36 @@
+#encoding: utf-8
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JpToCh</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container-fluid">
+<%= render "common/navbar" %>
+<%= yield %>
+</div>
+
+<%= notice_message %>
+
+<h1>日文輸入法打中文</h1>
+<%= aaa %>
+
+<label>請輸入中文</label>
+<p></p>
+<button>Convert!!!</button>
+
+<%= form_tag("/test", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= render "common/footer" %>
+
+</body>
+</html>

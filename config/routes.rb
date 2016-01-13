@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+root 'test#index'
+#post 'test' => 'test#gg'
+get  'test' => 'test#index'
+get  'test/getList' => 'test#getList'
+
+#resources :test
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
