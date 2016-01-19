@@ -1,11 +1,12 @@
 # JpInputToChineseConverter 日文輸入法打中文
 
+## What is it?
+打3DS的時候只有日文輸入法，想打中文超不方便，怒開發這個APP
+
 - 使用Ruby on Rails開發
 - demo網址: http://jptoch-bl.herokuapp.com/
   
-  
-  
-----使用教學----  
+##使用教學  
 
 1.輸入你想打的中文然後點一下"轉換"
 ![](https://github.com/hymen81/JpInputToChineseConverter/blob/master/app/assets/images/step1.png)
