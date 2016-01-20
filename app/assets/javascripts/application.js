@@ -18,30 +18,31 @@
 //= require_tree .
 
 
-$(document).ready(function(){
-	$('#tutorialBtn').click(function(e){
-		//alert("open!!");
-		$('#pleaseWaitDialog2').modal('show');
-	});
-	$('#recentBtn').click(function(e){
-		 e.preventDefault();
+$(document).ready(function() {
+    $('#tutorialBtn').click(function(e) {
+        //alert("open!!");
+        $('#pleaseWaitDialog2').modal('show');
+    });
+    $('#recentBtn').click(function(e) {
+        e.preventDefault();
         $("#wrapper").toggleClass("toggled");
-	});
-
-	setInterval(ajaxCall, 5000); //300000 MS == 5 minutes
-
-	function ajaxCall() {
-    	$.get("/test/getList", function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
     });
 
-    	
-	}
+    setInterval(ajaxCall, 10000); // 10 secs
+
+    function ajaxCall() {
+        $.get("/jp_toch/getList", function(data, status) {
+            //alert("Data: " + data + "\nStatus: " + status);
+        });
+    }
 });
 
 jQuery(function($) {
-  $("#tool-form")
-    .bind("ajax:beforeSend", function(){$('#pleaseWaitDialog').modal('show');})
-    .bind("ajax:complete", function() {$('#pleaseWaitDialog').modal('hide');}
-    );
+    $("#tool-form")
+        .bind("ajax:beforeSend", function() {
+            $('#pleaseWaitDialog').modal('show');
+        })
+        .bind("ajax:complete", function() {
+            $('#pleaseWaitDialog').modal('hide');
+        });
 });

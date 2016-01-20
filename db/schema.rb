@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112064651) do
+ActiveRecord::Schema.define(version: 20160115101101) do
+
+  create_table "map_tables", force: :cascade do |t|
+    t.string   "chinese"
+    t.string   "japanese"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mtests", force: :cascade do |t|
     t.string   "chinese"
@@ -24,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160112064651) do
     t.string   "input"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "price"
+    t.string   "author"
   end
 
 end

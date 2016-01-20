@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-root 'test#index'
+root 'jp_toch#index'
 #post 'test' => 'test#gg'
-get  'test' => 'test#index'
-get  'test/getList' => 'test#getList'
+get  'jp_toch' => 'jp_toch#index'
+get  'jp_toch/getList' => 'jp_toch#getList'
 
 #resources :test
 
