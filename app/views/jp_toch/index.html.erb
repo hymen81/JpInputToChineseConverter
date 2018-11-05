@@ -9,14 +9,6 @@
 </head>-->
 <body>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-	$("#wrapper").toggleClass("toggled");
-});
-
-</script>
-
 <div class="container-fluid">
 <%= render "common/navbar" %>
 <%= yield %>
@@ -24,35 +16,11 @@ $(document).ready(function(){
 
 <%= notice_message %>
 
-<div id="wrapper">
-
-<div id="recentList">
-<!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a>
-                        查詢關鍵字列表
-                    </a>
-                </li>
-                <% UserInput.order("created_at DESC").limit(10).each do |f| %>
-		        <li href="/">        
-		          <a><%= f.input %></a>    
-		        </li>
-		      <% end %>
-                
-            </ul>
-        </div>
-<!-- /#sidebar-wrapper -->
-</div>
 
 <div class="container">
   <div class="row">
     <div class="span4">
 
-
-
-<button id="recentBtn" class="btn btn-default">系統最近查詢</button>
 
 <%= form_tag("/jp_toch", method: "get", remote: true, class:'text-center', id: "tool-form") do %>
   <%= label_tag(:chinese, "請輸入中二文", class:'text-info') %>
@@ -98,7 +66,6 @@ $(document).ready(function(){
   </div>
   </div>
   </div>
-
 
 <!--
   <div class="col-sm-4">
